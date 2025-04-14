@@ -12,9 +12,9 @@ Welcome to my collection of **FreeCodeCamp** projects! This repo is a showcase o
 
 | Project | Description | Preview |
 |--------|-------------|---------|
-| 🎬 [Video Compilation Page] | A curated video showcase using semantic HTML and responsive layout. | ✅ |
-| 🐱 [Build a Travel Agency Page]| A cat blog featuring semantic structure and a photo gallery. | ✅ |
-| 📅 [Event Hub] | A clean event landing page with modern layout, dark mode, and animations. | ✅ |
+| 🎬 Video Compilation Page | A curated video showcase using semantic HTML and responsive layout. | ✅ |
+| 🐱 Build a Travel Agency Page| A cat blog featuring semantic structure and a photo gallery. | ✅ |
+| 📅 Event Hub | A clean event landing page with modern layout, dark mode, and animations. | ✅ |
 | 🎮 More Coming Soon... | Stay tuned for more projects as I continue the FCC journey. | 🚧 |
 
 ---
