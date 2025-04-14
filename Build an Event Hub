@@ -3,243 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <title>Event Hub</title>
-  <meta name="description" content="Event Hub - Discover upcoming and past events in tech, design, and community." />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
-    :root {
-      --bg-light: #eef2f3;
-      --bg-dark: #1c1c1c;
-      --text-light: #333;
-      --text-dark: #f0f0f0;
-      --accent: #00e6b8;
-      --card-light: #fff;
-      --card-dark: #2a2a2a;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: var(--bg-light);
-      color: var(--text-light);
-      padding: 40px 20px;
-      min-height: 100vh;
-      transition: all 0.4s ease;
-    }
-
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--text-dark);
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #eee;
+      margin: 0;
+      padding: 0 20px;
     }
 
     header {
-      background: #111;
-      color: #fff;
-      padding: 30px;
+      background-color: #1f1f1f;
+      padding: 2rem;
       text-align: center;
-      border-radius: 20px;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
-      margin-bottom: 50px;
-      position: relative;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      letter-spacing: 2px;
-    }
-
-    .toggle-theme {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      cursor: pointer;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      color: var(--accent);
-      transition: transform 0.3s ease;
-    }
-
-    .toggle-theme:hover {
-      transform: rotate(20deg) scale(1.1);
+      margin-bottom: 1rem;
+      color: #00e6b8;
     }
 
     nav ul {
+      list-style: none;
+      padding: 0;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-      list-style: none;
+      gap: 2rem;
     }
 
     nav a {
-      color: var(--accent);
+      color: #00e6b8;
       text-decoration: none;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
+      font-weight: bold;
     }
 
     main {
-      max-width: 1200px;
-      margin: 0 auto;
-      animation: fadeIn 1.5s ease;
+      padding: 2rem 0;
     }
 
     section {
-      margin-bottom: 60px;
+      margin-bottom: 3rem;
     }
 
     h2 {
-      font-size: 2rem;
-      margin-bottom: 30px;
-      color: inherit;
-      border-left: 8px solid var(--accent);
-      padding-left: 12px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      border-left: 6px solid #00e6b8;
+      padding-left: 10px;
+      margin-bottom: 1.5rem;
     }
 
     article {
-      background: var(--card-light);
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: slideUp 1s ease forwards;
-      opacity: 0;
-    }
-
-    body.dark article {
-      background: var(--card-dark);
-    }
-
-    article:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    article h3 {
-      margin-bottom: 10px;
-      font-size: 1.4rem;
-      color: var(--accent);
-    }
-
-    article p {
-      font-size: 0.95rem;
-      line-height: 1.5;
+      background: #1e1e1e;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     article img {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-top: 15px;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.6rem;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      margin-top: 1rem;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1><i class="fa-solid fa-calendar-days"></i> Event Hub</h1>
-    <button class="toggle-theme" onclick="toggleTheme()" title="Toggle Dark Mode">
-      <i class="fa-solid fa-moon"></i>
-    </button>
+    <h1>Event Hub</h1>
     <nav>
       <ul>
-        <li><a href="#upcoming-events"><i class="fa-solid fa-arrow-up-right-dots"></i> Upcoming Events</a></li>
-        <li><a href="#past-events"><i class="fa-solid fa-clock-rotate-left"></i> Past Events</a></li>
+        <li><a href="#upcoming-events">Upcoming Events</a></li>
+        <li><a href="#past-events">Past Events</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <section id="upcoming-events">
-      <h2><i class="fa-solid fa-forward"></i> Upcoming Events</h2>
-      <div class="card-grid">
-        <article>
-          <h3>🌐 Future Tech Conference</h3>
-          <p>Explore innovations in AI, robotics, and quantum computing.<br><strong>Date:</strong> May 20, 2025</p>
-        </article>
-        <article>
-          <h3>✈️ Digital Nomad Summit</h3>
-          <p>Connect with creatives and remote workers in the tech world.<br><strong>Date:</strong> June 10, 2025</p>
-        </article>
-      </div>
+      <h2>Upcoming Events</h2>
+      <article>
+        <h3>Future Tech Conference</h3>
+        <p>Explore the latest in AI and quantum computing. Date: May 20, 2025.</p>
+      </article>
+      <article>
+        <h3>Digital Nomad Summit</h3>
+        <p>Connect with remote creatives in tech and design. Date: June 10, 2025.</p>
+      </article>
     </section>
 
     <section id="past-events">
-      <h2><i class="fa-solid fa-backward"></i> Past Events</h2>
-      <div class="card-grid">
-        <article>
-          <h3>💻 Hack the Future</h3>
-          <p>Startups hacked real-world problems and pitched their ideas.<br><strong>Date:</strong> March 12, 2025</p>
-          <img src="https://cdn.freecodecamp.org/curriculum/labs/past-event1.jpg" alt="Hackathon participants coding together" />
-        </article>
-        <article>
-          <h3>🎨 Design Thinking Jam</h3>
-          <p>Hands-on sessions for UI/UX design and rapid prototyping.<br><strong>Date:</strong> February 25, 2025</p>
-          <img src="https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg" alt="Designers collaborating during an event" />
-        </article>
-      </div>
+      <h2>Past Events</h2>
+      <article>
+        <h3>Hack the Future</h3>
+        <p>A 48-hour hackathon that brought together devs and dreamers. Date: March 12, 2025.</p>
+        <img src="https://cdn.freecodecamp.org/curriculum/labs/past-event1.jpg" alt="Hackathon participants coding together">
+      </article>
+      <article>
+        <h3>Design Thinking Jam</h3>
+        <p>A creative sprint for UI/UX designers and developers. Date: February 25, 2025.</p>
+        <img src="https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg" alt="Designers collaborating during an event">
+      </article>
     </section>
   </main>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle("dark");
-      const icon = document.querySelector(".toggle-theme i");
-      icon.classList.toggle("fa-moon");
-      icon.classList.toggle("fa-sun");
-    }
-
-    // Fade-in animation trigger for articles
-    document.addEventListener("DOMContentLoaded", () => {
-      const articles = document.querySelectorAll("article");
-      articles.forEach((article, index) => {
-        setTimeout(() => {
-          article.style.opacity = 1;
-        }, 300 + index * 300);
-      });
-    });
-  </script>
 
 </body>
 </html>
