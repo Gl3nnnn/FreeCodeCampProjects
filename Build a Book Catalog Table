@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Catalog Table</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #4a4e69;
+      margin-bottom: 1rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: #4a4e69;
+      color: #fff;
+    }
+
+    thead th {
+      padding: 1rem;
+      font-size: 1.1rem;
+    }
+
+    tbody td {
+      padding: 0.8rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    tfoot td {
+      padding: 1rem;
+      text-align: right;
+      background-color: #ddd;
+      font-weight: bold;
+    }
+
+    i {
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><i class="fas fa-book"></i> Book Catalog</h1>
+
+  <table>
+    <<thead>
+  <tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Genre</th>
+    <th>Publication Year</th>
+  </tr>
+</thead>
+    <tbody>
+      <tr>
+        <td>The Great Gatsby</td>
+        <td>F. Scott Fitzgerald</td>
+        <td>Classic</td>
+        <td>1925</td>
+      </tr>
+      <tr>
+        <td>1984</td>
+        <td>George Orwell</td>
+        <td>Dystopian</td>
+        <td>1949</td>
+      </tr>
+      <tr>
+        <td>To Kill a Mockingbird</td>
+        <td>Harper Lee</td>
+        <td>Fiction</td>
+        <td>1960</td>
+      </tr>
+      <tr>
+        <td>Harry Potter</td>
+        <td>J.K. Rowling</td>
+        <td>Fantasy</td>
+        <td>1997</td>
+      </tr>
+      <tr>
+        <td>The Hobbit</td>
+        <td>J.R.R. Tolkien</td>
+        <td>Adventure</td>
+        <td>1937</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="4">Total Books: 5</td>
+      </tr>
+    </tfoot>
+  </table>
+
+</body>
+</html>
